@@ -7,4 +7,4 @@ RUN mvn clean package
 
 FROM tomcat:9.0-alpine
 WORKDIR /usr/local/tomcat/
-COPY --from=build /App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/
+COPY --from=build /App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
