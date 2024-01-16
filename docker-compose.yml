@@ -4,7 +4,7 @@ version: '3'
 services:
   app:
     build:
-        context: /home/keglia/App42
+        context: .
         dockerfile: Dockerfile
     ports:
       - "8080:8080"
