@@ -1,8 +1,10 @@
-FROM openjdk:8-jdk-alpine
-ENV APP_NAME App42PaaS-Java-MySQL-Sample
-ENV APP_HOME /usr/app
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-COPY target/$APP_NAME.jar $APP_HOME/$APP_NAME.jar
-EXPOSE 8080
-CMD ["java", "-jar", "App42PaaS-Java-MySQL-Sample.jar"]
+FROM tomcat:9-jdk11
+RUN apt update
+RUN apt install -y default-jdk
+RUN apt install -y maven 
+RUN apt install -y git 
+WORKDIR /home/keglia/
+RUN git clone https://github.com/Stupin87/App42.git
+WORKDIR /home/keglia/App42
+RUN mvn package
+RUN mv /home/keglia/App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
