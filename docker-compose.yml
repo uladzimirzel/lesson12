@@ -15,8 +15,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: password
 
   db:
-    image: mysql:latest
-    restart: always
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: passwordroot
       MYSQL_DATABASE: APP42
