@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://http://34.118.87.20/:3306/APP42
+      SPRING_DATASOURCE_URL: jdbc:mysql://34.118.87.20:3306/APP42
       SPRING_DATASOURCE_USERNAME: test
       SPRING_DATASOURCE_PASSWORD: 123456
   db:
