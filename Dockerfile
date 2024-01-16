@@ -5,6 +5,6 @@ RUN apt install -y maven
 RUN apt install -y git 
 WORKDIR /user/app
 RUN git clone https://github.com/uladzimirzel/APP422
-WORKDIR /user/app/App42
+WORKDIR /user/app/APP422
 RUN mvn package
-RUN mv /user/app/App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
+RUN mv /user/app/APP422/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
