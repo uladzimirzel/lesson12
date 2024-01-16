@@ -7,12 +7,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    depends_on:
+      - db
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://34.118.87.20:3306/APP42
       SPRING_DATASOURCE_USERNAME: userdb
       SPRING_DATASOURCE_PASSWORD: password
 
-  mysql:
+  db:
     image: mysql:latest
     restart: always
     environment:
@@ -23,4 +25,4 @@ services:
     ports:
       - "3306:3306"
 volumes:
-  mysql:
+  db:
