@@ -6,4 +6,3 @@ RUN apt install git -y
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
 RUN cd App42PaaS-Java-MySQL-Sample
 RUN mvn clean package
-RUN mv /App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/localtomcat/webapps
