@@ -14,14 +14,15 @@ services:
       restart: always
       environment:
         MYSQL_DATABASE: 'APP42'
-        MYSQL_USER: userdb
-        MYSQL_PASSWORD: password
-        MYSQL_ROOT_PASSWORD: password
+        MYSQL_USER: 'userdb'
+        MYSQL_PASSWORD: 'password'
+        MYSQL_ROOT_PASSWORD: 'password'
       ports:
-        - "3306:3306"
+        - '3306:3306'
       expose:
         - '3306'
       volumes:
       - db:/var/lib/mysql
 volumes:
+  package-maven:
   db:
