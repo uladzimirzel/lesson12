@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: app42paas-java-mysql-sample:latest
     ports:
       - "8080:8080"
     depends_on:
@@ -15,7 +16,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: password
 
   db:
-    image: mysql:5.7
+    image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: passwordroot
       MYSQL_DATABASE: APP42

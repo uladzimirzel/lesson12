@@ -1,10 +1,8 @@
-FROM maven:3.8-jdk-11-slim as build
-RUN apt update -y
-RUN apt install git -y
-RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
-WORKDIR ./App42PaaS-Java-MySQL-Sample
-RUN mvn clean package
-
-FROM tomcat:9.0-alpine
-WORKDIR /usr/local/tomcat/
-COPY --from=build /App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
+FROM openjdk:8-jdk-alpine
+ENV APP_NAME App42PaaS-Java-MySQL-Sample
+ENV APP_HOME /usr/app
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+COPY target/$APP_NAME.jar $APP_HOME/$APP_NAME.jar
+EXPOSE 8080
+CMD ["java", "-jar", "App42PaaS-Java-MySQL-Sample.jar"]
