@@ -1,23 +1,23 @@
 ---
+
 version: '3'
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+        context: /home/uladzimirzel/APP422
+        dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
       - db
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://34.118.87.20:3306/APP42
-      SPRING_DATASOURCE_USERNAME: userdb
+      SPRING_DATASOURCE_USERNAME: APP42
       SPRING_DATASOURCE_PASSWORD: password
-
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: APP42
       MYSQL_USER: userdb
       MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
