@@ -1,7 +1,7 @@
 FROM maven:3.8-jdk-11-slim as build
 RUN apt update -y
 RUN apt install git -y
-RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
+RUN git clone https://github.com/uladzimirzel/APP422.git
 WORKDIR ./App42PaaS-Java-MySQL-Sample
 RUN mvn clean package
 
