@@ -1,4 +1,4 @@
-FROM tomcat:9-alpine
+FROM tomcat:9.0.84-jdk11-temurin-jammy
 RUN apt update
 RUN apt install maven -y
 RUN apt install git -y
