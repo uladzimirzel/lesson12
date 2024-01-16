@@ -7,4 +7,4 @@ RUN mvn clean package
 
 FROM tomcat:9.0-alpine
 WORKDIR /usr/local/tomcat/
-COPY --from=build /boxfuse-sample-java-war-hello ./webapps
+COPY --from=build /boxfuse-sample-java-war-hello /webapps
