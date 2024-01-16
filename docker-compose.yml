@@ -13,7 +13,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: password
 
   mysql:
-    image: mysql:5.7
+    image: mysql:latest
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: passwordroot
       MYSQL_DATABASE: APP42
@@ -21,3 +22,5 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+volumes:
+  mysql:
