@@ -3,8 +3,7 @@ RUN apt update -y
 RUN apt install maven -y
 RUN apt install default-jdk -y
 RUN apt install git -y
-WORKDIR /usr/app
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample
-WORKDIR /usr/app/App42
+WORKDIR /App42PaaS-Java-MySQL-Sample
 RUN mvn package
-RUN mv /usr/appApp42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/localtomcat/webapps
+RUN mv /App42PaaS-Java-MySQL-Sample/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/localtomcat/webapps
