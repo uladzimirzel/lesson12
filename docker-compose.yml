@@ -3,20 +3,21 @@ version: '3'
 services:
   app:
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    depends_on:
-      - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://34.118.87.20:3306/APP42
-      SPRING_DATASOURCE_USERNAME: test
-      SPRING_DATASOURCE_PASSWORD: 123456
-  db:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/APP42
+      SPRING_DATASOURCE_USERNAME: userdb
+      SPRING_DATASOURCE_PASSWORD: password
+
+  mysql:
     image: mysql:5.7
     environment:
+      MYSQL_ROOT_PASSWORD: passwordroot
       MYSQL_DATABASE: APP42
-      MYSQL_USER: test
-      MYSQL_PASSWORD: 123456
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: userdb
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
