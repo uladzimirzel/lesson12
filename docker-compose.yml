@@ -17,7 +17,6 @@ services:
 
   mysql:
     image: mysql:latest
-    command: default_authentication_plugin=caching_sha2_password
     ports:
       - "3306:3306"
     environment:
