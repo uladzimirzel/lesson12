@@ -3,7 +3,7 @@ RUN apt update -y
 RUN apt install git -y
 RUN git clone https://github.com/uladzimirzel/App42.git
 WORKDIR ./App42
-RUN mvn clean package
+RUN mvn package
 
 FROM tomcat:9.0-alpine
 WORKDIR /usr/local/tomcat/webapps
