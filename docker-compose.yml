@@ -24,7 +24,3 @@ services:
       MYSQL_DATABASE: app42
       MYSQL_USER: userdb
       MYSQL_PASSWORD: password123
-  volumes:
-      - mysql-data:/var/lib/mysql
-volumes:
-  mysql-data:
