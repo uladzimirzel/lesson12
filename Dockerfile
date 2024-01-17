@@ -1,10 +1,9 @@
-FROM maven:3.8-jdk-11-slim as build
-RUN apt update -y
+FROM tomcat:9-jdk11
+RUB apt update
+RUN apt install default-jdk -y
+RUN apt install maven -y
 RUN apt install git -y
 RUN git clone https://github.com/uladzimirzel/App42.git
-WORKDIR ./App42
+WORKDIR /App42
 RUN mvn package
-
-FROM tomcat:9.0-alpine
-WORKDIR /usr/local/tomcat/webapps
-COPY --from=build /App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
+RUN mv /App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
