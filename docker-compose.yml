@@ -19,12 +19,3 @@ services:
     image: mysql:latest
     ports:
       - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: app42
-      MYSQL_USER: userdb
-      MYSQL_PASSWORD: password
-    volumes:
-      - app42:/var/lib/mysql
-volumes:
-  app42:
