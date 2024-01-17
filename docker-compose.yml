@@ -9,11 +9,11 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - db
-  db:
+      - mysql
+  mysql:
     image: mysql:5.7
     environment:
-      MYSQL_HOST: 34.116.174.97
+      MYSQL_HOST: mysql
       MYSQL_DATABASE: app42
       MYSQL_USER: userdb
       MYSQL_PASSWORD: password
