@@ -10,11 +10,7 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/app42
-      SPRING_DATASOURCE_USERNAME: userdb
-      SPRING_DATASOURCE_PASSWORD: password123
-
+    
   mysql:
     image: mysql:latest
     environment:
@@ -22,5 +18,9 @@ services:
       MYSQL_DATABASE: app42
       MYSQL_USER: userdb
       MYSQL_PASSWORD: password123
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/app42
+      SPRING_DATASOURCE_USERNAME: userdb
+      SPRING_DATASOURCE_PASSWORD: password123
     ports:
       - "3306:3306"
+      
