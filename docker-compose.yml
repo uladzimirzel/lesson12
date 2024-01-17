@@ -11,7 +11,7 @@ services:
     depends_on:
       - mysql
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/app42
+      SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/app42
       SPRING_DATASOURCE_USERNAME: userdb
       SPRING_DATASOURCE_PASSWORD: password123
 
@@ -25,7 +25,3 @@ services:
       MYSQL_DATABASE: app42
       MYSQL_USER: userdb
       MYSQL_PASSWORD: password123
-    volumes:
-      - app42:/var/lib/mysql
-volumes:
-  app42:
