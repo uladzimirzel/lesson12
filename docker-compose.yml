@@ -13,6 +13,7 @@ services:
   db:
     image: mysql:5.7
     environment:
+      MYSQL_HOST: 34.116.174.97
       MYSQL_DATABASE: app42
       MYSQL_USER: userdb
       MYSQL_PASSWORD: password
