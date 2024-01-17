@@ -1,12 +1,10 @@
-# Используйте образ с Java
-FROM openjdk:8-jdk-alpine
-
-# Установка переменной окружения для приложения
-ENV APP_DIR /app
-WORKDIR $APP_DIR
-
-# Копирование JAR-файла в образ
-COPY target/App42PaaS-Java-MySQL-Sample-1.0-SNAPSHOT.jar $APP_DIR/app.jar
-
-# Запуск приложения
-CMD ["java", "-jar", "app.jar"]
+FROM tomcat:9-jdk11
+RUN apt update
+RUN apt install default-jdk -y
+RUN apt install maven -y
+RUN apt install git -y
+WORKDIR /usr/app
+RUN git clone https://github.com/uladzimirzel/App42.git
+WORKDIR /usr/app/App42
+RUN mvn clean package
+RUN mv /usr/app/App42/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
