@@ -24,7 +24,3 @@ services:
       MYSQL_PASSWORD: password123
     ports:
       - "3306:3306"
-    volumes:
-      - app42:/var/lib/mysql
-volumes:
-  app42:
