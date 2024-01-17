@@ -26,4 +26,4 @@ services:
     expose:
       - "3306"
     volumes:
-      - db:/var/lib/mysql
+      - app42:/var/lib/mysql
