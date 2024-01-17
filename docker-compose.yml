@@ -27,3 +27,5 @@ services:
       - "3306"
     volumes:
       - app42:/var/lib/mysql
+volumes:
+  app42:
